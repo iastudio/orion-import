@@ -1,0 +1,15 @@
+.wrapper {
+	overflow: hidden;
+}
+
+.wrapper__1280 {
+	margin: auto;
+	min-width: 960px;
+	max-width: 1280px;
+	background-color: #fff;
+	@include photoshop-drop-shadow(90, 0, 0, 20px, #C9C9C9);
+}
+
+.main {
+	min-height: 700px;
+}

@@ -1,0 +1,56 @@
+﻿
+.sprite-images-logo,
+.sprite-images-head-bg,
+.sprite-images-nav-bg,
+.sprite-images-corner {
+    background-image: url('../i/sprites.png');
+    background-repeat: no-repeat;
+}
+
+.sprite-images-logo {
+    background-position: 0 0;
+    width: 312px;
+    height: 70px;
+}
+
+.sprite-images-head-bg {
+    background-position: 0 -70px;
+    width: 195px;
+    height: 183px;
+}
+
+.sprite-images-nav-bg {
+    background-position: -195px -70px;
+    width: 78px;
+    height: 78px;
+}
+
+.sprite-images-corner {
+    background-position: -195px -148px;
+    width: 43px;
+    height: 25px;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 1.0), screen and (min--moz-device-pixel-ratio: 1.0), screen and (-o-min-device-pixel-ratio: 100/100), screen and (min-device-pixel-ratio: 1.0), screen and (min-resolution: 1.0dppx) {
+.sprite-images-logo,
+.sprite-images-head-bg,
+.sprite-images-nav-bg,
+.sprite-images-corner {
+        background-image: url('../i/sprites.png');
+        -webkit-background-size: 312px 253px;
+        -moz-background-size: 312px 253px;
+        background-size: 312px 253px;
+    }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2.0), screen and (min--moz-device-pixel-ratio: 2.0), screen and (-o-min-device-pixel-ratio: 200/100), screen and (min-device-pixel-ratio: 2.0), screen and (min-resolution: 2.0dppx) {
+.sprite-images-logo,
+.sprite-images-head-bg,
+.sprite-images-nav-bg,
+.sprite-images-corner {
+        background-image: url('../i/sprites@2x.png');
+        -webkit-background-size: 312px 253px;
+        -moz-background-size: 312px 253px;
+        background-size: 312px 253px;
+    }
+}

@@ -1,0 +1,72 @@
+#slider {
+	padding: 45px 0 0;
+	color: #FFF;
+	background: #2786c1;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#2786c1), to(#045181)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(top, #2786c1, #045181); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient(top, #2786c1, #045181); /* FF3.6+ */
+	background-image:     -ms-linear-gradient(top, #2786c1, #045181); /* IE10 */
+	background-image:      -o-linear-gradient(top, #2786c1, #045181); /* Opera 11.10+ */
+	background-image:         linear-gradient(to bottom, #2786c1, #045181); /* W3C */
+
+	.slider__slide {
+		position: relative;
+		.slider__text {
+			position: relative;
+			border: 3px solid #FFF;
+			@include border-radius(10px);
+			padding: 30px;
+			margin-bottom: 40px;
+			&:after {
+				display: block;
+				position: absolute;
+				bottom: -24px;
+				left: 70px;
+				content: '';
+				@extend .sprite-images-corner;
+			}
+			h1 {
+				font-size: 28px;
+				color: #FFF;
+				font-weight: 200;
+				margin: 0;
+				padding: 0;
+				line-height: 1.1;
+			}
+		}
+		.slide__image {
+			position: absolute;
+			right: -150px;
+			bottom: -25px;
+			z-index: 1;
+		}
+	}
+}
+
+.slider__menu {
+	background: url('../i/nav-bg.png') 0 0 repeat-x;
+	height: 78px;
+	margin-top: 45px;
+	ul {
+		position: relative;
+		overflow: hidden;
+		height: 78px;
+		padding: 0;
+		li {
+			list-style: none;
+			float: left;
+			position: relative;
+			height: 78px;
+			a {
+				color: #FFF;
+				&:hover {
+					color: #FFF;
+				}
+				font-weight: 600;
+				text-decoration: none;
+				padding: 25px 0;
+				display: block;
+			}
+		}
+	}
+}
