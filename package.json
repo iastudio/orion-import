@@ -1,0 +1,20 @@
+{
+  "name": "Orion-import",
+  "version": "0.0.1",
+  "description": "Orion-import verstka",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/irudoy/orion-import.git"
+  },
+  "author": "Ivan Rudoy",
+  "homepage": "https://github.com/irudoy/orion-import",
+  "dependencies": {
+    "grunt": "^0.4.4",
+    "grunt-autoprefixer": "^0.7.3",
+    "grunt-contrib-compass": "^0.7.2",
+    "grunt-contrib-imagemin": "^0.7.0",
+    "grunt-contrib-jade": "^0.11.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-sass": "^0.12.1"
+  }
+}
