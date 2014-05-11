@@ -49,23 +49,47 @@
 	margin-top: 45px;
 	ul {
 		position: relative;
-		overflow: hidden;
+		//overflow: hidden;
 		height: 78px;
 		padding: 0;
 		li {
 			list-style: none;
 			float: left;
 			position: relative;
+			margin: 0;
 			height: 78px;
+			&.active a, a:hover, {
+				@include box-shadow(
+						rgba(204, 246, 175, 0.5) 0 -60px 40px -30px inset,
+						rgba(204, 246, 175, 0.5) 0 40px 40px -30px inset,
+						rgba(171, 207, 152, 0.5) 0 40px 40px -30px,
+						rgba(0, 0, 0, 0.3) 0 2px 6px -2px
+					);
+				@include transition-property(all);
+				@include transition-duration(.1s);
+				@include transition-timing-function(ease-in);
+			}
 			a {
 				color: #FFF;
-				&:hover {
+				&:hover, &.active {
 					color: #FFF;
 				}
-				font-weight: 600;
+				font-weight: 400;
 				text-decoration: none;
-				padding: 25px 0;
+				padding: 0 10px; // TODO: Vertical Align JS
+				line-height: 1.1;
+				width: 190px;
+				height: 94px;
+				margin-top: -8px;
+				margin-right: 1px;
+				text-align: center;
 				display: block;
+				text-shadow: 0 2px 0 #005285;
+				//white-space: pre;
+				span {
+					display: block;
+					padding-top: 30px;
+				}
 			}
 		}
 	}

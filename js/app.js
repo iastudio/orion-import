@@ -1,5 +1,10 @@
 (function(){
 
+	//////////////////////////////////
+	//  VERTICAL CNTRNG @ SLDR NAV  //
+	//////////////////////////////////
+
+	$('.slider__menu a span').flexVerticalCenter({ cssAttribute: 'padding-top' });
 	
 
 // 	////////////////////////
