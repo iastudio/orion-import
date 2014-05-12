@@ -607,19 +607,26 @@ body {
   font-size: 14px;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac-mini-2\/Desktop\/src\/orion-full\/www\/scss\/_else\.scss}line{font-family:\0000368}}
-.news .news__content h3 {
+.news .news__content a {
   font-size: 14px;
   font-weight: 600;
   margin-bottom: 8px;
   margin-top: -2px;
   line-height: 1;
   text-transform: uppercase;
+  color: #000;
+  text-decoration: none;
+  display: block;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac-mini-2\/Desktop\/src\/orion-full\/www\/scss\/_else\.scss}line{font-family:\0000377}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac-mini-2\/Desktop\/src\/orion-full\/www\/scss\/_else\.scss}line{font-family:\0000378}}
+.news .news__content a:hover {
+  color: #666666;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac-mini-2\/Desktop\/src\/orion-full\/www\/scss\/_else\.scss}line{font-family:\0000383}}
 .news .news__content p {
   margin: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac-mini-2\/Desktop\/src\/orion-full\/www\/scss\/_else\.scss}line{font-family:\0000382}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac-mini-2\/Desktop\/src\/orion-full\/www\/scss\/_else\.scss}line{font-family:\0000388}}
 .news .icon-news {
   position: relative;
   margin-left: 21px;

@@ -11,9 +11,11 @@ module.exports = function(grunt) {
     jade: {
       compile: {
         files: [{
+          cwd: 'jade',
           src: ['*.jade'],
+          dest: '.',
           expand: true,
-          ext: '.html',
+          ext: '.html'
         }]
       },
       options: {
@@ -45,7 +47,7 @@ module.exports = function(grunt) {
         tasks: ['compass', 'autoprefixer']
       },
       jade: {
-        files: ['*.jade'],
+        files: ['jade/**/*.jade'],
         tasks: ['jade'],
       },
       imagemin: {

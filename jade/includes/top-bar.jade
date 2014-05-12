@@ -1,0 +1,15 @@
+.top-bar
+  .container
+    nav.top-bar__nav.col-9
+      ul
+        - each item, i in navItems
+          if (active == (i + 1))
+            li.active: a(href='#') #{item}
+          else
+            li: a(href='#') #{item}
+
+    .top-bar__search.col-3
+      form
+        input#search(type='text', placeholder='Поиск')
+        label(for='search')
+          i.fa.fa-search
