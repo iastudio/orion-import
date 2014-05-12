@@ -5,7 +5,63 @@
 	//////////////////////////////////
 
 	$('.slider__menu a span').flexVerticalCenter({ cssAttribute: 'padding-top' });
-	
+
+	/////////////////
+	//    SLIDER   //
+	/////////////////
+
+	var count = $('#slider .slider__slide.active').attr('id').split('slide-')[1]-1;;
+	var slidesCount = $('#slider .slider__slide').size()-1;
+
+	$('#slider .slider__menu a').on('click', function(e) {
+		e.preventDefault();
+		if ($('#slider .slider__slide:animated').size()>0) return;
+
+		count = $(this).attr('href').split('#slide-')[1]-1;
+
+		$('#slider .slider__slide.active').fadeOut(300, function() {
+			$('#slider .slider__slide.active').removeClass('active');
+			$('#slider .slider__slide').eq(count).addClass('active');
+			$('#slider .slider__slide').eq(count).fadeIn(300);
+		});
+		$('#slider .slider__menu li.active').removeClass('active');
+		$('#slider .slider__menu li').eq(count).addClass('active');
+	});
+
+	$('#slider .slider__nav a').on('click', function(e) {
+		e.preventDefault();
+		if ($('#slider .slider__slide:animated').size()>0) return;
+		
+		var direction;
+		$(this).hasClass('slider__nav--next') ? direction = 1 : direction = 0;
+
+		if (direction == 0)
+			(count == 0) ? count = slidesCount + 1 : count = count;
+		else
+			(count == slidesCount) ? count = - 1 : count = count;
+
+		$('#slider .slider__slide.active').fadeOut(300, function() {
+			$(this).removeClass('active');
+			(direction == 1) ? count++ : count--;
+			$('#slider .slider__slide').eq(count).addClass('active');
+			$('#slider .slider__slide').eq(count).fadeIn(300);
+			$('#slider .slider__menu li.active').removeClass('active');
+			$('#slider .slider__menu li').eq(count).addClass('active');
+		});
+	});
+
+	////////////////////////
+	//  PLACEHOLDERS FIX  //
+	////////////////////////
+
+	if ($.fn.placeholder.input && $.fn.placeholder.textarea) {
+	} else if ($.fn.placeholder.input) {
+		$('textarea').placeholder();
+	} else {
+		$('input, textarea').placeholder();
+	}
+
+})(jQuery);	
 
 // 	////////////////////////
 // 	//  FORMS VALIDATION  //
@@ -24,52 +80,6 @@
 // 			}
 //         });
 //     });
-
-// 	/////////////////////////
-// 	//  BROWSER DETECTION  //
-// 	/////////////////////////
-
-// 	var BrowserDetect = 
-// 	{
-// 	    init: function () 
-// 	    {
-// 	        this.browser = this.searchString(this.dataBrowser) || "Other";
-// 	        this.version = this.searchVersion(navigator.userAgent) ||       this.searchVersion(navigator.appVersion) || "Unknown";
-// 	    },
-
-// 	    searchString: function (data) 
-// 	    {
-// 	        for (var i=0 ; i < data.length ; i++)   
-// 	        {
-// 	            var dataString = data[i].string;
-// 	            this.versionSearchString = data[i].subString;
-
-// 	            if (dataString.indexOf(data[i].subString) != -1)
-// 	            {
-// 	                return data[i].identity;
-// 	            }
-// 	        }
-// 	    },
-
-// 	    searchVersion: function (dataString) 
-// 	    {
-// 	        var index = dataString.indexOf(this.versionSearchString);
-// 	        if (index == -1) return;
-// 	        return parseFloat(dataString.substring(index+this.versionSearchString.length+1));
-// 	    },
-
-// 	    dataBrowser: 
-// 	    [
-// 	        { string: navigator.userAgent, subString: "Chrome",  identity: "Chrome" },
-// 	        { string: navigator.userAgent, subString: "MSIE",    identity: "Explorer" },
-// 	        { string: navigator.userAgent, subString: "Firefox", identity: "Firefox" },
-// 	        { string: navigator.userAgent, subString: "Safari",  identity: "Safari" },
-// 	        { string: navigator.userAgent, subString: "Opera",   identity: "Opera" }
-// 	    ]
-
-// 	};
-
-// 	BrowserDetect.init();
 
 // 	/////////////////
 // 	//    SCROLL   //
@@ -205,61 +215,6 @@
 // 	});
 
 // 	/////////////////
-// 	//    SLIDER   //
-// 	/////////////////
-
-// 	var count = $('.slide.active').attr('id').split('slide-')[1]-1;;
-// 	var slidesCount = $('.slide').size()-1;
-
-// 	$('.slider-nav a').on('click', function(e) {
-// 		e.preventDefault();
-// 		if ($('.slide:animated').size()>0) return;
-
-// 		count = $(this).attr('href').split('#slide-')[1]-1;
-
-// 		$('.slide.active').fadeOut(300, function() {
-// 			$('.slide.active').removeClass('active');
-// 			$('.slide').eq(count).addClass('active');
-// 			$('.slide').eq(count).fadeIn(300);
-// 		});
-// 		$('.slider-nav li.active').removeClass('active');
-// 		$('.slider-nav li').eq(count).addClass('active');
-// 	});
-
-// 	$('.prev-next > div').on('click', function(e) {
-// 		e.preventDefault();
-// 		if ($('.slide:animated').size()>0) return;
-		
-// 		var direction;
-// 		$(this).hasClass('next-btn') ? direction = 1 : direction = 0;
-
-// 		if (direction == 0)
-// 			(count == 0) ? count = slidesCount + 1 : count = count;
-// 		else
-// 			(count == slidesCount) ? count = - 1 : count = count;
-
-// 		$('.slide.active').fadeOut(300, function() {
-// 			$(this).removeClass('active');
-// 			(direction == 1) ? count++ : count--;
-// 			$('.slide').eq(count).addClass('active');
-// 			$('.slide').eq(count).fadeIn(300);
-// 			$('.slider-nav li.active').removeClass('active');
-// 			$('.slider-nav li').eq(count).addClass('active');
-// 		});
-// 	});
-
-// 	////////////////////////
-// 	//  PLACEHOLDERS FIX  //
-// 	////////////////////////
-
-// 	if ($.fn.placeholder.input && $.fn.placeholder.textarea) {
-// 	} else if ($.fn.placeholder.input) {
-// 		$('textarea').placeholder();
-// 	} else {
-// 		$('input, textarea').placeholder();
-// 	}
-
-// 	/////////////////
 // 	//    ELSE     //
 // 	/////////////////
 
@@ -340,4 +295,48 @@
 // 		}
 // 	});
 
-})(jQuery);
+/////////////////////////
+//  BROWSER DETECTION  //
+/////////////////////////
+
+var BrowserDetect = 
+{
+    init: function () 
+    {
+        this.browser = this.searchString(this.dataBrowser) || "Other";
+        this.version = this.searchVersion(navigator.userAgent) ||       this.searchVersion(navigator.appVersion) || "Unknown";
+    },
+
+    searchString: function (data) 
+    {
+        for (var i=0 ; i < data.length ; i++)   
+        {
+            var dataString = data[i].string;
+            this.versionSearchString = data[i].subString;
+
+            if (dataString.indexOf(data[i].subString) != -1)
+            {
+                return data[i].identity;
+            }
+        }
+    },
+
+    searchVersion: function (dataString) 
+    {
+        var index = dataString.indexOf(this.versionSearchString);
+        if (index == -1) return;
+        return parseFloat(dataString.substring(index+this.versionSearchString.length+1));
+    },
+
+    dataBrowser: 
+    [
+        { string: navigator.userAgent, subString: "Chrome",  identity: "Chrome" },
+        { string: navigator.userAgent, subString: "MSIE",    identity: "Explorer" },
+        { string: navigator.userAgent, subString: "Firefox", identity: "Firefox" },
+        { string: navigator.userAgent, subString: "Safari",  identity: "Safari" },
+        { string: navigator.userAgent, subString: "Opera",   identity: "Opera" }
+    ]
+
+};
+
+BrowserDetect.init();

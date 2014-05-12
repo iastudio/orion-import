@@ -64,14 +64,15 @@ html(lang='ru')
               span.header__phoneTitle Контактная информация
               i.fa.fa-phone
               h1.header__phone
-                | 8 (423)
+                | 8 (423) 
                 strong 200-48-47
             // end header__contacts 
           // end container 
         // begin slider  
         #slider
-          // begin slide-1 slider__slide  
-          .slide-1.slider__slide
+
+          // begin slide-1 slider__slide
+          #slide-1.slider__slide.active
             // begin container  
             .container
               // begin slider__text  
@@ -81,11 +82,72 @@ html(lang='ru')
               a.btn.col-4(href='#') Смотреть предложения
               img.slide__image(src='i/slider/slide-1.png', height='220', width='782')
             // end container 
+          // end slide-1 slider__slide
+
+          // begin slide-1 slider__slide  
+          #slide-2.slider__slide
+            // begin container  
+            .container
+              // begin slider__text  
+              .slider__text.col-6
+                h1 Грузовики из Кореи, Японии и США. Огромный выбор
+              // end slider__text 
+              a.btn.col-4(href='#') Смотреть предложения
+              img.slide__image(src='i/slider/slide-2.png', height='238', width='761')
+            // end container 
           // end slide-1 slider__slide 
+
+          // begin slide-1 slider__slide  
+          #slide-3.slider__slide
+            // begin container  
+            .container
+              // begin slider__text  
+              .slider__text.col-6
+                h1 Любая спецтехника
+                  br 
+                  | никаких посредников
+              // end slider__text 
+              a.btn.col-4(href='#') Смотреть предложения
+              img.slide__image(src='i/slider/slide-3.png', height='298', width='862')
+            // end container 
+          // end slide-1 slider__slide 
+
+          // begin slide-1 slider__slide  
+          #slide-3.slider__slide
+            // begin container  
+            .container
+              // begin slider__text  
+              .slider__text.col-6
+                h1 Любая мототехника
+                  br 
+                  | под заказ
+              // end slider__text 
+              a.btn.col-4(href='#') Смотреть предложения
+              img.slide__image(src='i/slider/slide-4.png', height='265', width='648')
+            // end container 
+          // end slide-1 slider__slide 
+
+          // begin slide-1 slider__slide  
+          #slide-3.slider__slide
+            // begin container  
+            .container
+              // begin slider__text  
+              .slider__text.col-6
+                h1 Товары с аукционов 
+                  br 
+                  | Японии и США
+              // end slider__text 
+              a.btn.col-4(href='#') Смотреть предложения
+              img.slide__image(src='i/slider/slide-5.png', height='271', width='782')
+            // end container 
+          // end slide-1 slider__slide 
+
           // begin slider__nav  
           .slider__nav
-            a.slider__prev(href='#')
-            a.slider__next(href='#')
+            a.slider__nav--prev(href='#') 
+              span.icon-arrow-left
+            a.slider__nav--next(href='#')
+              span.icon-arrow-right
           // end slider__nav 
           // begin slider__menu  
           .slider__menu
@@ -93,25 +155,25 @@ html(lang='ru')
             .container
               ul
                 li.active
-                  a(href='#')
+                  a(href='#slide-1')
                     span
                       | Автомобили
                       br
                       | со всего мира
                 li
-                  a(href='#')
+                  a(href='#slide-2')
                     span Грузовики
                 li
-                  a(href='#')
+                  a(href='#slide-3')
                     span Спецтехника
                 li
-                  a(href='#')
+                  a(href='#slide-4')
                     span
                       | Аукционы Yahoo
                       br
                       | и eBay
                 li
-                  a(href='#')
+                  a(href='#slide-5')
                     span Мототехника
             // end container 
           // end slider__menu 
@@ -147,7 +209,7 @@ html(lang='ru')
             .footer__contacts.col-4
               span.contacts__title Контактная информация:
               h1.contacts__phone
-                | 8 (423)
+                | 8 (423) 
                 strong 200-48-47
               span.contacts__address г.Владивосток, ул.Русская 9Б, офис 608
             // end footer__contacts col-4 
@@ -157,7 +219,7 @@ html(lang='ru')
                 | Данный веб-ресурс, носит исключительно информационный характер и не является публичной офертой.
               // begin footer_copy  
               .footer_copy
-                | Разработка сайта -
+                | Разработка сайта &mdash; 
                 a(href='http://iastudio.ru') Интерактив
               // end footer_copy 
             // end footer__info 
