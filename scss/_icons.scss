@@ -23,6 +23,9 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.icon-news:before {
+	content: "\e602";
+}
 .icon-arrow-left:before {
 	content: "\e600";
 }

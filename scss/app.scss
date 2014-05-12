@@ -33,6 +33,7 @@
 // Elements
 @import "header";
 @import "slider";
+@import "specslider";
 @import "footer";
 
 *, *:before, *:after {
@@ -59,7 +60,14 @@ body {
 }
 
 h1, h2, h3, h4 {
-	color: $blue-color;
+	//color: $blue-color;
+	color: #000;
+	font-weight: 200;
+	margin-bottom: 30px;
+}
+
+h1 {
+	font-size: 30px;
 }
 
 p {

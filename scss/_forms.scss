@@ -4,14 +4,15 @@
 	text-align: center;
 	background-color: rgb(246,160,25);
 	@include linear-gradient(#6c9d0f, #599412);
-	@include border-radius(35px);
+	@include border-radius(1000px);
 	color: #fff !important;
-	text-shadow: 0.5px 0.866px 0px rgb( 118, 83, 6 );
+	text-shadow: 0.5px 1px 0px rgb( 118, 83, 6 );
 	font-size: 18px;
 	font-weight: bold;
 	padding: 8px;
 	text-decoration: none;
 	margin: 8px 0;
+	margin-left: 15px;
 	position: relative;
 	clear: both;
 	cursor: pointer;
@@ -24,21 +25,27 @@
 	-o-user-select: none;
 	user-select: none;
 
-	-webkit-box-shadow:0 4px 0 0 #518010, 0 4px 3px 0px #45680a;
-	        box-shadow:0 4px 0 0 #518010, 0 4px 3px 0px #45680a;
+	@include box-shadow (
+				photoshop-shadow(90, 1px, 0, 0, #84C217, inset),
+				photoshop-shadow(90, 4px, 0, 0, #45680A),
+				0 3px 0 6px rgba(0, 68, 106, 0.9),
+				0px 3.5px 0 6px rgba(255, 255, 255, 0.5)
+			);
+	
 
 	&:hover {
 		@include linear-gradient(#599412, #6c9d0f);
-		-webkit-box-shadow:0 4px 0 0 #518010, 0 4px 3px 0px #45680a;
-	        box-shadow:0 4px 0 0 #518010, 0 4px 3px 0px #45680a;
 		&:active {
 			top: 4px;
-			-webkit-box-shadow:0 2px 0 0 #518010;
-	        		box-shadow:0 2px 0 0 #518010;
+			@include box-shadow (
+				photoshop-shadow(90, 1px, 0, 0, #84C217, inset),
+				photoshop-shadow(90, 1px, 0, 0, #45680A),
+				0 -1px 0 6px rgba(0, 68, 106, 0.9),
+				0 -0.5px 0 6px rgba(255, 255, 255, 0.5)
+			);
 		}
 	}
 }
-
 
 .form-preloader {
 	color: #000;

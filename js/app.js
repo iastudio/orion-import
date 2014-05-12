@@ -61,6 +61,43 @@
 		$('input, textarea').placeholder();
 	}
 
+	///////////////////
+	//  SPEC-SLIDER  //
+	///////////////////
+
+	var easing = "easeInOutSine";
+
+	var inner = $('.specslider__wrapper');
+	var maxCount = $('.specslider__item').length-4;
+	var count = 0;
+	var marg = parseInt(inner.css('margin-left'));
+	var width = parseInt($('.specslider__item').css('width'));
+
+	$('.specslider__nav a').on( 'click', function( event ) {
+
+		event.preventDefault();
+		if (inner.is(':animated')) {return;}
+		
+	    if ( $(this).hasClass("specslider__nav--prev") ) {
+	    	if (count <= 0) {
+	    		return;
+	    	} else {
+	    		marg = marg+width;
+	    		count -= 1;
+	    	}
+	    } else if (count < maxCount) {
+			marg = marg-width;
+			count += 1;
+		}
+
+		inner.animate({
+			marginLeft: marg+'px'
+		}, {
+		  duration: 500,
+		  easing: easing
+		});
+	});
+
 })(jQuery);	
 
 // 	////////////////////////
