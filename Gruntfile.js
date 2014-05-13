@@ -21,12 +21,12 @@ module.exports = function(grunt) {
     },
     uglify: {
       options: {
-        compress: {
-          global_defs: {
-            "DEBUG": false
-          },
-          dead_code: true
-        },
+        // compress: {
+        //   global_defs: {
+        //     "DEBUG": false
+        //   },
+        //   dead_code: true
+        // },
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
       },
       dist: {

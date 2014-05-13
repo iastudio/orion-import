@@ -437,39 +437,43 @@ g.updateLeftScrubber(A(E));}if(x){var D=H-o-e;g.updateRightScrubber(A(D));}});$(
 
 (function(){
 
-	var slider_price = new range_slider({
-		selector 			: '#slider__price',
-		unit 				: ' т.р.',
-		min 				: 50,
-		max					: 2000,
-  		left_scrubber_pos 	: 180,
-  		right_scrubber_pos 	: 640,
-		round_by 			: 1,
-		rounded				: true
-	});
+	if ($('.filter__slider').length > 0) {
 
-	var slider_year = new range_slider({
-		selector 			: '#slider__year',
-		unit 				: '',
-		min 				: 1992,
-		max					: 2014,
-  		left_scrubber_pos 	: 1998,
-  		right_scrubber_pos 	: 2002,
-		round_by 			: 1,
-		rounded				: true
-	});
+		var slider_price = new range_slider({
+			selector 			: '#slider__price',
+			unit 				: ' т.р.',
+			min 				: 50,
+			max					: 2000,
+	  		left_scrubber_pos 	: 180,
+	  		right_scrubber_pos 	: 640,
+			round_by 			: 1,
+			rounded				: true
+		});
 
-	var slider_engine = new range_slider({
-		selector 			: '#slider__engine',
-		unit 				: ' л.',
-		min 				: 0.6,
-		max					: 6.0,
-  		left_scrubber_pos 	: 1.6,
-  		right_scrubber_pos 	: 2.5,
-		round_by 			: 0.1,
-		rounded				: true,
-		fixed				: true
-	});
+		var slider_year = new range_slider({
+			selector 			: '#slider__year',
+			unit 				: '',
+			min 				: 1992,
+			max					: 2014,
+	  		left_scrubber_pos 	: 1998,
+	  		right_scrubber_pos 	: 2002,
+			round_by 			: 1,
+			rounded				: true
+		});
+
+		var slider_engine = new range_slider({
+			selector 			: '#slider__engine',
+			unit 				: ' л.',
+			min 				: 0.6,
+			max					: 6.0,
+	  		left_scrubber_pos 	: 1.6,
+	  		right_scrubber_pos 	: 2.5,
+			round_by 			: 0.1,
+			rounded				: true,
+			fixed				: true
+		});
+
+	}
 
 	///////////////////////////////
 	//  GET VEHICLES FOR FILTER  //
@@ -520,9 +524,13 @@ g.updateLeftScrubber(A(E));}if(x){var D=H-o-e;g.updateRightScrubber(A(D));}});$(
 	/////////////////
 
 	(function(){
-		
-		if ($('.slider__slide').size > 0) {
-			var count = $('#slider .slider__slide.active').attr('id').split('slide-')[1]-1;;
+		if ($('.slider__slide').length > 0) {
+			//var count = $('#slider .slider__slide.active').attr('id').split('slide-')[1]-1;
+
+			if ($('#slider').attr('data-count') == undefined)
+				$('#slider').attr('data-count', 0);
+			var count = parseInt($('#slider').attr('data-count'));
+
 			var slidesCount = $('#slider .slider__slide').size()-1;
 		}
 
@@ -536,6 +544,8 @@ g.updateLeftScrubber(A(E));}if(x){var D=H-o-e;g.updateRightScrubber(A(D));}});$(
 				$('#slider .slider__slide.active').removeClass('active');
 				$('#slider .slider__slide').eq(count).addClass('active');
 				$('#slider .slider__slide').eq(count).fadeIn(300);
+				//
+				$('#slider').attr('data-count', count);
 			});
 			$('#slider .slider__menu li.active').removeClass('active');
 			$('#slider .slider__menu li').eq(count).addClass('active');
@@ -560,8 +570,11 @@ g.updateLeftScrubber(A(E));}if(x){var D=H-o-e;g.updateRightScrubber(A(D));}});$(
 				$('#slider .slider__slide').eq(count).fadeIn(300);
 				$('#slider .slider__menu li.active').removeClass('active');
 				$('#slider .slider__menu li').eq(count).addClass('active');
+				///
+				$('#slider').attr('data-count', count);
 			});
 		});
+
 	})();	
 
 	////////////////////////
