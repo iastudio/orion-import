@@ -8,6 +8,33 @@ module.exports = function(grunt) {
             }
         }
     },
+    concat: {
+      options: {
+        stripBanners: true,
+        banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
+          '<%= grunt.template.today("dd-mm-yyyy") %> */',
+      },
+      dist: {
+        src: ['js/jquery.placeholder.js', 'js/jquery.validate.min.js', 'js/lightbox-2.6.min.js', 'js/jquery.easing.1.3.js', 'js/jquery.modal.min.js', 'js/jquery-ui-1.10.4.custom.min.js', 'js/jquery.flexverticalcenter.js', 'js/rangeSlider.min.js', 'js/app.js'],
+        dest: 'js/built.js',
+      },
+    },
+    uglify: {
+      options: {
+        compress: {
+          global_defs: {
+            "DEBUG": false
+          },
+          dead_code: true
+        },
+        banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+      },
+      dist: {
+        files: {
+          'js/app.min.js': ['js/built.js']
+        }
+      }
+    },
     jade: {
       compile: {
         files: [{
@@ -62,7 +89,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
 
   grunt.registerTask('build', ['compass']);
-  grunt.registerTask('default', ['build','watch','jade','imagemin']);
+  grunt.registerTask('default', ['build','watch','jade','imagemin','concat','uglify']);
 }
