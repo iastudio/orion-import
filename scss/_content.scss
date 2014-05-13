@@ -1,0 +1,168 @@
+.content {
+
+	h1, h2, h3 {
+		margin-bottom: 18px;
+	}
+
+	h1 {
+		font-size: 30px;
+		font-weight: 200;
+		color: #666666;
+	}
+
+	h2 {
+		text-transform: uppercase;
+		font-size: 18px;
+		font-weight: 600;
+	}
+
+	h3 {
+		text-transform: uppercase;
+		font-size: 14px;
+		font-weight: 600;
+	}
+
+	a, a:link, a:visited {
+		color: #0D73B2;
+		text-decoration: underline;
+		&:hover {
+			color: lighten(#0D73B2, 15%);
+		}
+		&.btn {
+			text-decoration: none;
+		}
+	}
+
+}
+
+.breadcrumbs {
+	display: block;
+	overflow: hidden;
+	margin-bottom: 18px;
+
+	li {
+		list-style: none;
+		position: relative;
+		float: left;
+		margin-left: 0;
+		margin-right: 25px;
+		font-size: 12px;
+		&:after {
+			display: block;
+			position: absolute;
+			content: '\2192';
+			top: 0px;
+			right: -18px;
+			color: #666666;
+		}
+		&:last-child {
+			&:after {
+				display: none;
+			}
+		}
+	}
+}
+
+table {
+
+	border-collapse: collapse;
+	width:100%;
+	height:100%;
+	margin-bottom: 18px;
+	padding:0px;
+	font-size: 14px;
+	font-weight: 200;
+	display: table !important;
+
+    @include inner-table-borders(1px, #E1E1E1);
+    @include outer-table-borders(1px, #E1E1E1);
+
+	th {
+		background-color: #E1E1E1;
+		padding: 10px;
+		font-weight: bold;
+		text-transform: uppercase;
+		font-size: 14px;
+	}
+
+	tr {
+
+		td {
+			background-color: #fff;
+			padding: 10px;
+		}
+
+		&:nth-child(2n+1) {
+			td {
+				background-color: #fff;
+			}
+		}
+	}
+
+	&.search__results {
+		border: none;
+		font-size: 14px;
+		line-height: 1.1;
+
+		tr:nth-child(2n+1) {
+			td {
+				background-color: #FAFAFA;
+			}
+		}
+
+		td {
+			padding-top: 30px;
+			&.table__image {
+				padding: 20px 0;
+				vertical-align: middle;
+			}
+		}
+
+		tr:first-child th {
+		  border-top: 0;
+		}
+		tr:last-child td {
+		  border-bottom: 0;
+		}
+		tr td:first-child,
+		tr th:first-child {
+		  border-left: 0;
+		}
+		tr td:last-child,
+		tr th:last-child {
+		  border-right: 0;
+		}
+		th {
+			background-color: transparent;
+			line-height: 1;
+			text-transform: none;
+			font-size: 14px;
+			color: #666666;
+			vertical-align: middle;
+		}
+	}
+}
+
+ul {
+	list-style-image: url('../i/dot.png');
+}
+
+.pagination {
+	li {
+		list-style: none;
+		float: left;
+		margin: 0;
+		margin-right: 5px;
+		a, a:link, a:visited {
+			padding: 5px 10px;
+			border: 1px solid #fff;
+			display: block;
+			color: #000;
+			text-decoration: none;
+			&:hover {
+				color: #000;
+				border-color: #E1E1E1;
+			}
+		}
+	}
+}

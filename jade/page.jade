@@ -1,0 +1,95 @@
+- var active = 3
+- var pageName = 'Внутренняя страница'
+- var sidebarItems = ['Спецпредложения', 'Аукционы BDS и I-MOTO', 'Статистика продаж', 'Мото с Yahoo', 'Частые вопросы', 'Схема работы Япония']
+include includes/settings
+doctype html
+html(lang='ru')
+  head
+    include includes/head
+  body
+    .wrapper
+      .wrapper__1280
+        include includes/top-bar
+        include includes/header
+        include includes/slider-like-menu
+        //- begin main  
+        .main
+          //- begin container  
+          .container
+            .col-4.sidebar
+              h2 Мототехника из японии
+              nav: ul
+                - each item in sidebarItems
+                  li: a(href='#') #{item}
+            .col-8.content
+              h1 Внутренняя страница H1
+              .container
+                ol.breadcrumbs
+                  li: a(href="#") Главная
+                  li: a(href="#") Подраздел
+                  li: a(href="#") Страница
+              p В 2008 году впервые появилась идея выйти напрямую на российский рынок, воплотить в реальность которую не удалось в связи с рядом определенных причин и вскоре наступившему кризису. В настоящий момент мы преодолели все препятствия и предлагаем Вам свои услуги по покупке и доставке <a href="#">автомобилей</a>, мотоциклов, спецтехники и водной техники с любых аукционов и стоянок мира.
+              h2 Заголовок Н2
+              p В связи с рядом определенных причин и вскоре наступившему кризису. В настоящий момент мы преодолели все препятствия и предлагаем Вам свои услуги по покупке и доставке  мотоциклов, спецтехники и водной техники с любых аукционов и стоянок мира.
+              h3 ЗАГОЛОВОК Н3
+              p На этой неделе сразу три отечественных предприятия приостановили выпуск автомобилей в связи с неблагоприятной ситуацией на рынке.
+              h3 Таблица
+              table
+                tr
+                  th Дата
+                  th Название
+                  th Значение
+                  th Остаток
+                tr
+                  td 12 апреля 2014
+                  td 15 апреля 2014
+                  td 18 апреля 2014
+                  td 19 апреля 2014
+                tr
+                  td Lexus
+                  td Nissan
+                  td JCB
+                  td Hino
+                tr
+                  td 45
+                  td 574
+                  td 78
+                  td 88
+                tr
+                  td 45
+                  td 574
+                  td 78
+                  td 88
+              .container
+                a.btn.col-3(href="#") Кнопка
+              .container
+                - var list = ['Спецпредложения', 'Сток CycleTrader', 'Сток Portland', 'Сток Seattle', 'Схема работы "США"']
+                .col-3
+                  h3 Нумерованный Список
+                  ol
+                    - each item in list
+                        li #{item}
+                .col-3
+                  h3 Список с маркерами
+                  ul.col-3
+                    - each item in list
+                        li #{item}
+              .container
+                form.col-6
+                  h3 ФОРМА ОТПРАВКИ СООБЩЕНИЯ
+                  input.col-3(type='text', placeholder='Имя')
+                  input.col-3(type='email', placeholder='E-mail')
+                  input.col-3(type='tel', placeholder='Телефон')
+                  textarea.col-5(placeholder='Текст сообщения')
+                  input.col-3(type='submit', value='Отправить')
+
+              .container
+                - var pagination = ['1', '2', '3', '4', '5', '6', '7']
+                ul.pagination
+                  li: a(href="#") &laquo;
+                  - each item in pagination
+                    li: a(href='#') #{item}
+                  li: a(href="#") &raquo;
+
+        include includes/footer
+    include includes/tail

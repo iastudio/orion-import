@@ -1,18 +1,94 @@
+
 (function(){
+
+	var slider_price = new range_slider({
+		selector 			: '#slider__price',
+		unit 				: ' т.р.',
+		min 				: 50,
+		max					: 2000,
+  		left_scrubber_pos 	: 180,
+  		right_scrubber_pos 	: 640,
+		round_by 			: 1,
+		rounded				: true
+	});
+
+	var slider_year = new range_slider({
+		selector 			: '#slider__year',
+		unit 				: '',
+		min 				: 1992,
+		max					: 2014,
+  		left_scrubber_pos 	: 1998,
+  		right_scrubber_pos 	: 2002,
+		round_by 			: 1,
+		rounded				: true
+	});
+
+	var slider_engine = new range_slider({
+		selector 			: '#slider__engine',
+		unit 				: ' л.',
+		min 				: 0.6,
+		max					: 6.0,
+  		left_scrubber_pos 	: 1.6,
+  		right_scrubber_pos 	: 2.5,
+		round_by 			: 0.1,
+		rounded				: true,
+		fixed				: true
+	});
+
+	///////////////////////////////
+	//  GET VEHICLES FOR FILTER  //
+	///////////////////////////////
+
+	$.ajax({
+        url: "http://www.carqueryapi.com/api/0.3/?callback=?&cmd=getMakes",
+        dataType: "jsonp",
+        success: function(data){
+        	$('.filter__make').find('option').remove();
+ 			$('.filter__make').append("<option value='' disabled selected>Выберите марку</option>");
+            for (var i=0; i < data.Makes.length-1; i++) {
+				$('.filter__make')
+					.append($("<option></option>")
+					.attr("value", data.Makes[i].make_id)
+					.text(data.Makes[i].make_display));
+			}
+        }
+ 	});
+
+ 	$( ".filter__make" ).change(function() {
+ 		$('.filter__model').find('option').remove();
+ 		$('.filter__model').append("<option>Загрузка...</option>");
+		$.ajax({
+	        url: "http://www.carqueryapi.com/api/0.3/?callback=?&cmd=getModels&make=" + $(this).val(),
+	        dataType: "jsonp",
+	        success: function(data){
+	        	$('.filter__model').find('option').remove();
+	            for (var i=0; i < data.Models.length-1; i++) {
+					$('.filter__model')
+						.append($("<option></option>")
+						.attr("value", data.Models[i].model_name)
+						.text(data.Models[i].model_name));
+				}
+	        }
+	 	});
+	});
 
 	//////////////////////////////////
 	//  VERTICAL CNTRNG @ SLDR NAV  //
 	//////////////////////////////////
 
 	$('.slider__menu a span').flexVerticalCenter({ cssAttribute: 'padding-top' });
+	$('.slider__menu--menuonly a span').flexVerticalCenter({ cssAttribute: 'padding-top' });
 
 	/////////////////
 	//    SLIDER   //
 	/////////////////
 
 	(function(){
-		var count = $('#slider .slider__slide.active').attr('id').split('slide-')[1]-1;;
-		var slidesCount = $('#slider .slider__slide').size()-1;
+		
+		if ($('.slider__slide').size > 0) {
+			var count = $('#slider .slider__slide.active').attr('id').split('slide-')[1]-1;;
+			var slidesCount = $('#slider .slider__slide').size()-1;
+		}
 
 		$('#slider .slider__menu a').on('click', function(e) {
 			e.preventDefault();
@@ -69,19 +145,23 @@
 
 
 	(function(){
-		var easing = "easeInOutSine";
-		var inner = $('.specslider__wrapper');
-		var maxCount = $('.specslider__item').length-4;
-		var count = 0;
-		var marg = parseInt(inner.css('margin-left'));
-		var width = parseInt($('.specslider__item').css('width'));
 
+		var easing = "easeInOutSine";
 		$('.specslider__nav a').on( 'click', function( event ) {
+			//debugger;
+			var $this = $(this);
+			var $inner = $this.parent().parent().find('.specslider__wrapper');
+			var maxCount = $inner.find('.specslider__item').length-4;
+			if ($inner.attr('data-count') == undefined)
+				$inner.attr('data-count', 0);
+			var count = parseInt($inner.attr('data-count'));
+			var marg = parseInt($inner.css('margin-left'));
+			var width = parseInt($inner.find('.specslider__item').css('width'));
 
 			event.preventDefault();
-			if (inner.is(':animated')) {return;}
+			if ($inner.is(':animated')) {return;}
 			
-		    if ( $(this).hasClass("specslider__nav--prev") ) {
+		    if ( $this.hasClass("specslider__nav--prev") ) {
 		    	if (count <= 0) {
 		    		return;
 		    	} else {
@@ -93,12 +173,15 @@
 				count += 1;
 			}
 
-			inner.animate({
+			$inner.animate({
 				marginLeft: marg+'px'
 			}, {
 			  duration: 500,
 			  easing: easing
 			});
+
+			$inner.attr('data-count', count);
+			
 		});
 	})();
 

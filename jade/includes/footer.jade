@@ -3,18 +3,9 @@ footer.footer
     .footer__nav.col-12
       nav.nav
         ul
-          li
-            a(href='#') Вопросы и ответы
-          li
-            a(href='#') Новости
-          li
-            a(href='#') Фотоотчёты
-          li
-            a(href='#') О компании
-          li
-            a(href='#') Контакты
-          li
-            a(href='#') Дилерам
+          - each item in navItems
+            li: a(href='#') #{item}
+
     .footer__contacts.col-4
       span.contacts__title Контактная информация:
       h1.contacts__phone

@@ -1,0 +1,111 @@
+- var active = 5
+- var pageName = 'Каталог'
+- var sidebarItems = ['Аукционы Японии ON-LINE!', 'Аукционы OnePrice', 'Спецпредложения', 'Статистика японских аукционов', 'Калькулятор (полная пошлина)', 'Аварийные авто', 'Инструкция по аукционам', 'Цены на оформление ПТС', 'Схема работы "Полная пошлина"', 'Схема работы "Конструктор"', 'Определение даты выпуска', 'Каталог авто']
+include includes/settings
+doctype html
+html(lang='ru')
+  head
+    include includes/head
+  body
+    .wrapper
+      .wrapper__1280
+        include includes/top-bar
+        include includes/header
+        include includes/slider-like-menu
+        //- begin main  
+        .main
+          //- begin container  
+          .container
+            .col-4.sidebar
+              h2 Автомобили из японии
+              nav: ul
+                - each item in sidebarItems
+                  li: a(href='#') #{item}
+            .col-8.content
+              h1 Автомобили со всего мира
+              .col-8
+                ol.breadcrumbs
+                  li: a(href="#") Главная
+                  li: a(href="#") Автомобили
+              h3 Подбор автомобилей
+              .filter
+                .select
+                  select.filter__method
+                    option(value="", disabled, selected) Метод ввоза
+                    option Полная пошлина
+                    option Конструктор
+                .select.filter__select-country
+                  select.filter__country
+                    option(value="", disabled, selected) Страна производитель
+                    option Япония
+                    option США
+                    option Корея
+                    option Россия
+                    option Германия
+                    option Франция
+                .select
+                  select.filter__make
+                    option(value="", disabled, selected) Загрузка...
+                .select
+                  select.filter__model
+                    option(value="", disabled, selected) Выберите модель
+                .select
+                  select.filter__drive
+                    option(value="", disabled, selected) Привод
+                    option Передний
+                    option Задний
+                    option Полный
+                .filter__slider
+                  strong Цена:
+                  #slider__price.range-slider
+                .filter__slider
+                  strong Год выпуска:
+                  #slider__year.range-slider
+                .filter__slider
+                  strong Объем двигателя:
+                  #slider__engine.range-slider
+                a.btn.col-3.btn__filter-apply Применить
+
+              h2 Результаты поиска: 581
+              - var photos = [1, 2, 3, 4, 5]
+              - var names = ['Daihatsu COPEN', 'Toyota Highlander', 'Subaru Forester', 'Suzuki Escudo', 'Honda H-RV', 'Daihatsu Terios', 'Nissan GT-R', 'Toyota Tacoma']
+              - var years = ['1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013']
+              - var engines = ['0.6', '1.3', '1.5', '1.6', '1.8', '2.0', '2.5', '3.0', '3.5']
+              - var drives = ['4WD', 'перед.', 'задн.']
+              - var types = ['полная пошлина', 'распил']
+              table.search__results
+                tr
+                  th Фото
+                  th Фирма
+                  th Год
+                  th Объем
+                  th Привод
+                  th Цена
+                  th Метод ввоза
+                - each item in years
+                  tr
+                    td.table__image
+                      a(href='#')
+                        img(src='i/placeholders/cat/' + photos[Math.floor(Math.random() * photos.length)] + '.jpg', width='140')
+                    - var name = names[Math.floor(Math.random() * names.length)]
+                    td #{name}
+                    - var year = years[Math.floor(Math.random() * years.length)]
+                    td #{year}
+                    - var engine = engines[Math.floor(Math.random() * engines.length)]
+                    td #{engine} л.
+                    - var drive = drives[Math.floor(Math.random() * drives.length)]
+                    td #{drive}
+                    - var price = Math.floor(Math.random() * (100000 - 2000000 + 1)) + 2000000;
+                    td #{price} руб.
+                    - var type = types[Math.floor(Math.random() * types.length)]
+                    td #{type}
+              .container
+                - var pagination = ['1', '2', '3', '4', '5', '6', '7']
+                ul.pagination
+                  li: a(href="#") &laquo;
+                  - each item in pagination
+                    li: a(href='#') #{item}
+                  li: a(href="#") &raquo;
+
+        include includes/footer
+    include includes/tail

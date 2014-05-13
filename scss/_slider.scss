@@ -10,11 +10,40 @@
 	background-image:      -o-linear-gradient(top, #2786c1, #045181); /* Opera 11.10+ */
 	background-image:         linear-gradient(to bottom, #2786c1, #045181); /* W3C */
 
+	&.slider--menuonly {
+		padding: 0;
+		.slider__menu--menuonly {
+			margin: 0;
+		}
+	}
+
 	.slider__slide {
 		position: relative;
 		display: none;
 		&.active {
 			display: block;
+		}
+		.btn {
+			margin-bottom: 0;
+			@include box-shadow (
+				photoshop-shadow(90, 1px, 0, 0, #84C217, inset),
+				photoshop-shadow(90, 4px, 0, 0, #45680A),
+				0 3px 0 6px rgba(0, 68, 106, 0.9),
+				0px 3.5px 0 6px rgba(255, 255, 255, 0.5)
+			);
+
+			&:hover {
+				@include linear-gradient(#599412, #6c9d0f);
+				&:active {
+					top: 4px;
+					@include box-shadow (
+						photoshop-shadow(90, 1px, 0, 0, #84C217, inset),
+						photoshop-shadow(90, 1px, 0, 0, #45680A),
+						0 -1px 0 6px rgba(0, 68, 106, 0.9),
+						0 -0.5px 0 6px rgba(255, 255, 255, 0.5)
+					);
+				}
+			}
 		}
 		.slider__text {
 			position: relative;
@@ -49,7 +78,7 @@
 		}
 	}
 
-	.slider__menu {
+	.slider__menu, .slider__menu--menuonly {
 		background: url('../i/nav-bg.png') 0 0 repeat-x;
 		height: 78px;
 		margin-top: 45px;

@@ -2,6 +2,8 @@
 .btn, a.btn, input[type=submit] {
 	display: block;
 	text-align: center;
+	border-style: solid;
+	border: none;
 	background-color: rgb(246,160,25);
 	@include linear-gradient(#6c9d0f, #599412);
 	@include border-radius(1000px);
@@ -12,6 +14,7 @@
 	padding: 8px;
 	text-decoration: none;
 	margin: 8px 0;
+	margin-bottom: 26px;
 	margin-left: 15px;
 	position: relative;
 	clear: both;
@@ -28,7 +31,7 @@
 	@include box-shadow (
 				photoshop-shadow(90, 1px, 0, 0, #84C217, inset),
 				photoshop-shadow(90, 4px, 0, 0, #45680A),
-				0 3px 0 6px rgba(0, 68, 106, 0.9),
+				0 3px 0 6px rgba(68, 68, 68, 0.3),
 				0px 3.5px 0 6px rgba(255, 255, 255, 0.5)
 			);
 	
@@ -40,7 +43,7 @@
 			@include box-shadow (
 				photoshop-shadow(90, 1px, 0, 0, #84C217, inset),
 				photoshop-shadow(90, 1px, 0, 0, #45680A),
-				0 -1px 0 6px rgba(0, 68, 106, 0.9),
+				0 -1px 0 6px rgba(68, 68, 68, 0.3),
 				0 -0.5px 0 6px rgba(255, 255, 255, 0.5)
 			);
 		}
@@ -76,61 +79,31 @@
 	}
 }
 
-input[type="text"], input[type="email"], textarea {
-	@include border-radius(5px);
-}
-
-button, .btn, input[type=submit] {
-	border-style: solid;
-	border-width: 0px;
-	cursor: pointer;
-	font-weight: normal;
-	line-height: normal;
-	margin: 0 0 1.42857rem;
-	position: relative;
-	text-decoration: none;
-	text-align: center;
-	display: inline-block;
-	padding-top: 1.14286rem;
-	padding-right: 2.28571rem;
-	padding-bottom: 1.21429rem;
-	padding-left: 2.28571rem;
-	font-size: 1.14286rem;
-	background-color: #008cba;
-	border-color: #007095;
-	color: #fff;
-	-webkit-transition: background-color 300ms ease-out;
-	-moz-transition: background-color 300ms ease-out;
-	transition: background-color 300ms ease-out;
-	padding-top: 1.14286rem;
-	padding-right: 2.28571rem;
-	padding-bottom: 1.21429rem;
-	padding-left: 2.28571rem;
-	font-size: 1.14286rem;
-}
-.blue {
-	input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea {
-		border: 1px solid $blue-color;
-		-webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.2);
-			    box-shadow: inset 0 1px 2px rgba(0,0,0,0.2);
-	}
-}
-input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea {
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+textarea, .select {
 	&::-webkit-input-placeholder {
 	   font-weight: normal;
-	   font-size: 17px;
 	}
 	&:-moz-placeholder { /* Firefox 18- */
 	   font-weight: normal;
-	   font-size: 17px;
 	}
 	&::-moz-placeholder {  /* Firefox 19+ */
 	   font-weight: normal;
-	   font-size: 17px;
 	}
 	&:-ms-input-placeholder {  
 	   font-weight: normal;
-	   font-size: 17px;
 	}
 
 	&.error {
@@ -140,23 +113,69 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
 	}
 
 	-webkit-appearance: none;
-	background-color: #fff;
-	font-family: inherit;
-	border: 1px none #ccc;
-	-webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
-	box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
 	color: rgba(0,0,0,0.75);
 	display: block;
-	font-size: 18px;
-	font-weight: bold;
-	margin: 0 0 1.14286rem 0;
-	padding: 0.57143rem;
-	height: 2.64286rem;
-	width: 100%;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
+	font-size: 13px;
+	font-weight: 200;
+	font-style: italic;
+	margin-bottom: 18px;
+	padding: 12px 15px;
+	height: 42px;
+	@include border-radius(21px);
+	border: 1px solid #C2BEBE;
+	background-color: #F9F9F9;
+	@include background(linear-gradient(top, rgba(255,255,255,1) 2%,rgba(245,245,245,1) 100%));
+	@include box-shadow (photoshop-shadow(90, 2px, 0, 5px, rgba(#D7D7D7, 1), inset));
 	-webkit-transition: -webkit-box-shadow 0.45s,border-color 0.45s ease-in-out;
 	-moz-transition: -moz-box-shadow 0.45s,border-color 0.45s ease-in-out;
 	transition: box-shadow 0.45s,border-color 0.45s ease-in-out;
 }
+
+textarea {
+	height: 100px;
+}
+
+.select {
+    margin-right: 16px;
+    padding: 0;
+    width: 190px;
+    height: 32px;
+    float: left;
+    position: relative;
+	&:hover {
+		@include box-shadow (photoshop-shadow(90, 2px, 0, 5px, rgba(#D7D7D7, 0.3), inset));
+	}
+	&:after {
+		display: block;
+		position: absolute;
+		font-family:'FontAwesome';
+		content:"\f078";
+		color: #0F547D;
+		top: 4px;
+		right: 15px;
+		font-weight: normal;
+		font-style: normal;
+		pointer-events: none;
+	}
+
+    select {
+    	cursor: pointer;
+	    padding: 0 15px;
+	    height: 32px;
+	    font-size: 13px;
+	    overflow: hidden;
+	    width: 100%;
+	    border: none;
+	    box-shadow: none;
+	    background-color: transparent;
+	    background-image: none;
+	    -webkit-appearance: none;
+	       -moz-appearance: none;
+	            appearance: none;
+
+	    &:focus {
+		    outline: none;
+		}
+	}
+}
+
