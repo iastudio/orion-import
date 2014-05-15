@@ -1,5 +1,5 @@
 #slider {
-	padding: 45px 0 0;
+	padding: 60px 0;
 	color: #FFF;
 	background: #2786c1;
 	position: relative;
@@ -23,28 +23,28 @@
 		&.active {
 			display: block;
 		}
-		.btn {
-			margin-bottom: 0;
-			@include box-shadow (
-				photoshop-shadow(90, 1px, 0, 0, #84C217, inset),
-				photoshop-shadow(90, 4px, 0, 0, #45680A),
-				0 3px 0 6px rgba(0, 68, 106, 0.9),
-				0px 3.5px 0 6px rgba(255, 255, 255, 0.5)
-			);
+		// .btn {
+		// 	margin-bottom: 0;
+		// 	@include box-shadow (
+		// 		photoshop-shadow(90, 1px, 0, 0, #84C217, inset),
+		// 		photoshop-shadow(90, 4px, 0, 0, #45680A),
+		// 		0 3px 0 6px rgba(0, 68, 106, 0.9),
+		// 		0px 3.5px 0 6px rgba(255, 255, 255, 0.5)
+		// 	);
 
-			&:hover {
-				@include linear-gradient(#599412, #6c9d0f);
-				&:active {
-					top: 4px;
-					@include box-shadow (
-						photoshop-shadow(90, 1px, 0, 0, #84C217, inset),
-						photoshop-shadow(90, 1px, 0, 0, #45680A),
-						0 -1px 0 6px rgba(0, 68, 106, 0.9),
-						0 -0.5px 0 6px rgba(255, 255, 255, 0.5)
-					);
-				}
-			}
-		}
+		// 	&:hover {
+		// 		@include linear-gradient(#599412, #6c9d0f);
+		// 		&:active {
+		// 			top: 4px;
+		// 			@include box-shadow (
+		// 				photoshop-shadow(90, 1px, 0, 0, #84C217, inset),
+		// 				photoshop-shadow(90, 1px, 0, 0, #45680A),
+		// 				0 -1px 0 6px rgba(0, 68, 106, 0.9),
+		// 				0 -0.5px 0 6px rgba(255, 255, 255, 0.5)
+		// 			);
+		// 		}
+		// 	}
+		// }
 		.slider__text {
 			position: relative;
 			border: 3px solid #FFF;
@@ -93,13 +93,19 @@
 				position: relative;
 				margin: 0;
 				height: 78px;
-				&.active a, a:hover, {
+				&.active a, a:hover {
 					@include box-shadow(
 							rgba(204, 246, 175, 0.5) 0 -60px 40px -30px inset,
 							rgba(204, 246, 175, 0.5) 0 40px 40px -30px inset,
 							rgba(171, 207, 152, 0.5) 0 40px 40px -30px,
 							rgba(0, 0, 0, 0.3) 0 2px 6px -2px
 						);
+					// @include box-shadow(
+					// 		rgba(246, 157, 25, 0.5) 0 -60px 40px -30px inset,
+					// 		rgba(246, 157, 25, 0.5) 0 40px 40px -30px inset,
+					// 		rgba(246, 157, 25, 0.5) 0 40px 40px -30px,
+					// 		rgba(0, 0, 0, 0.3) 0 2px 6px -2px
+					// 	);
 					@include transition-property(all);
 					@include transition-duration(.1s);
 					@include transition-timing-function(ease-in);

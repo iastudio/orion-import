@@ -4,11 +4,19 @@
 	text-align: center;
 	border-style: solid;
 	border: none;
+	//background-color: rgb(246,160,25);
+	//@include linear-gradient(#6c9d0f, #599412);
+
 	background-color: rgb(246,160,25);
-	@include linear-gradient(#6c9d0f, #599412);
+	@include linear-gradient(rgb(241,133,25), rgb(246,160,25));
+
 	@include border-radius(1000px);
-	color: #fff !important;
-	text-shadow: 0.5px 1px 0px rgb( 118, 83, 6 );
+	//color: #fff !important;
+	//text-shadow: 0.5px 1px 0px rgb( 118, 83, 6 );
+
+	color: #683c05 !important;
+	text-shadow: 0 1.5px 0px rgb( 248, 190, 102 );
+
 	font-size: 18px;
 	font-weight: bold;
 	padding: 8px;
@@ -28,25 +36,34 @@
 	-o-user-select: none;
 	user-select: none;
 
-	@include box-shadow (
-				photoshop-shadow(90, 1px, 0, 0, #84C217, inset),
-				photoshop-shadow(90, 4px, 0, 0, #45680A),
-				0 3px 0 6px rgba(68, 68, 68, 0.3),
-				0px 3.5px 0 6px rgba(255, 255, 255, 0.5)
-			);
+	box-shadow:0 4px 0 0 #854C05, 0 4px 3px 0px rgb( 66, 34, 1 );
+
+	// @include box-shadow (
+	// 			photoshop-shadow(90, 1px, 0, 0, #84C217, inset),
+	// 			photoshop-shadow(90, 4px, 0, 0, #45680A),
+	// 			0 3px 0 6px rgba(68, 68, 68, 0.3),
+	// 			0px 3.5px 0 6px rgba(255, 255, 255, 0.5)
+	// 		);
 	
 
 	&:hover {
-		@include linear-gradient(#599412, #6c9d0f);
+		color: rgb(241,133,25);
+		@include linear-gradient(rgb(246,160,25), rgb(241,133,25));
+	    box-shadow:0 4px 0 0 #854C05, 0 4px 3px 0px rgb( 66, 34, 1 );
 		&:active {
 			top: 4px;
-			@include box-shadow (
-				photoshop-shadow(90, 1px, 0, 0, #84C217, inset),
-				photoshop-shadow(90, 1px, 0, 0, #45680A),
-				0 -1px 0 6px rgba(68, 68, 68, 0.3),
-				0 -0.5px 0 6px rgba(255, 255, 255, 0.5)
-			);
+	        box-shadow:0 2px 0 0 #854C05;
 		}
+		// @include linear-gradient(#599412, #6c9d0f);
+		// &:active {
+		// 	top: 4px;
+		// 	@include box-shadow (
+		// 		photoshop-shadow(90, 1px, 0, 0, #84C217, inset),
+		// 		photoshop-shadow(90, 1px, 0, 0, #45680A),
+		// 		0 -1px 0 6px rgba(68, 68, 68, 0.3),
+		// 		0 -0.5px 0 6px rgba(255, 255, 255, 0.5)
+		// 	);
+		// }
 	}
 }
 
