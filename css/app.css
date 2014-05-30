@@ -1592,6 +1592,7 @@ body:after {
   padding-top: 50px;
   color: #FFF;
   background: #37a0e2;
+  position: relative;
   background-image: url("../i/head-bg.png") 0 0 repeat-x;
   /* fallback */
   background-image: url("../i/head-bg.png"), -webkit-gradient(linear, left top, left bottom, from(#37a0e2), to(#2786c1));
@@ -1605,10 +1606,21 @@ body:after {
   /* W3C */
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac-mini-2\/Desktop\/src\/orion-full\/www\/scss\/_header\.scss}line{font-family:\0000314}}
+.header:before {
+  position: absolute;
+  display: block;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../i/bg-icons.png") center 60px no-repeat;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac-mini-2\/Desktop\/src\/orion-full\/www\/scss\/_header\.scss}line{font-family:\0000323}}
 .header .header__logo {
   position: relative;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac-mini-2\/Desktop\/src\/orion-full\/www\/scss\/_header\.scss}line{font-family:\0000318}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac-mini-2\/Desktop\/src\/orion-full\/www\/scss\/_header\.scss}line{font-family:\0000327}}
 .header .header__logo .header__slogan {
   position: absolute;
   width: 350px;
@@ -1621,47 +1633,47 @@ body:after {
   text-shadow: 0.5px 0.866px 0px #065586;
   font-weight: 200;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac-mini-2\/Desktop\/src\/orion-full\/www\/scss\/_header\.scss}line{font-family:\0000332}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac-mini-2\/Desktop\/src\/orion-full\/www\/scss\/_header\.scss}line{font-family:\0000341}}
 .header .header__contacts {
   margin-top: 10px;
   position: relative;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac-mini-2\/Desktop\/src\/orion-full\/www\/scss\/_header\.scss}line{font-family:\0000337}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac-mini-2\/Desktop\/src\/orion-full\/www\/scss\/_header\.scss}line{font-family:\0000346}}
 .header .header__contacts a[href^=tel] {
   color: #fff;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac-mini-2\/Desktop\/src\/orion-full\/www\/scss\/_header\.scss}line{font-family:\0000341}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac-mini-2\/Desktop\/src\/orion-full\/www\/scss\/_header\.scss}line{font-family:\0000350}}
 .header .header__contacts .fa-phone {
   position: absolute;
   left: -28px;
   font-size: 22px;
   bottom: 28px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac-mini-2\/Desktop\/src\/orion-full\/www\/scss\/_header\.scss}line{font-family:\0000347}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac-mini-2\/Desktop\/src\/orion-full\/www\/scss\/_header\.scss}line{font-family:\0000356}}
 .header .header__contacts .header__phoneTitle {
   font-weight: 200;
   font-size: 14px;
   margin-bottom: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac-mini-2\/Desktop\/src\/orion-full\/www\/scss\/_header\.scss}line{font-family:\0000352}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac-mini-2\/Desktop\/src\/orion-full\/www\/scss\/_header\.scss}line{font-family:\0000361}}
 .header .header__contacts .header__phone {
   color: #FFF;
   font-weight: 200;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac-mini-2\/Desktop\/src\/orion-full\/www\/scss\/_header\.scss}line{font-family:\0000359}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac-mini-2\/Desktop\/src\/orion-full\/www\/scss\/_header\.scss}line{font-family:\0000368}}
 .top-bar {
   background-color: #00446a;
   width: 100%;
   height: 67px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac-mini-2\/Desktop\/src\/orion-full\/www\/scss\/_header\.scss}line{font-family:\0000365}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac-mini-2\/Desktop\/src\/orion-full\/www\/scss\/_header\.scss}line{font-family:\0000374}}
 .top-bar .top-bar__nav ul {
   margin: 0;
   padding: 0;
   float: left;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac-mini-2\/Desktop\/src\/orion-full\/www\/scss\/_header\.scss}line{font-family:\0000369}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac-mini-2\/Desktop\/src\/orion-full\/www\/scss\/_header\.scss}line{font-family:\0000378}}
 .top-bar .top-bar__nav ul li {
   list-style: none;
   float: left;
@@ -1672,7 +1684,7 @@ body:after {
   margin: 0 5px;
   cursor: pointer;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac-mini-2\/Desktop\/src\/orion-full\/www\/scss\/_header\.scss}line{font-family:\0000378}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac-mini-2\/Desktop\/src\/orion-full\/www\/scss\/_header\.scss}line{font-family:\0000387}}
 .top-bar .top-bar__nav ul li:after {
   position: absolute;
   display: block;
@@ -1699,7 +1711,7 @@ body:after {
   -webkit-transition-timing-function: ease-in;
   transition-timing-function: ease-in;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac-mini-2\/Desktop\/src\/orion-full\/www\/scss\/_header\.scss}line{font-family:\00003102}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac-mini-2\/Desktop\/src\/orion-full\/www\/scss\/_header\.scss}line{font-family:\00003111}}
 .top-bar .top-bar__nav ul li a {
   color: #FFF;
   font-weight: 200;
@@ -1712,15 +1724,15 @@ body:after {
   display: block;
   text-decoration: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac-mini-2\/Desktop\/src\/orion-full\/www\/scss\/_header\.scss}line{font-family:\00003115}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac-mini-2\/Desktop\/src\/orion-full\/www\/scss\/_header\.scss}line{font-family:\00003124}}
 .top-bar .top-bar__nav ul li.active:after, .top-bar .top-bar__nav ul li:hover:after {
   opacity: 1;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac-mini-2\/Desktop\/src\/orion-full\/www\/scss\/_header\.scss}line{font-family:\00003122}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac-mini-2\/Desktop\/src\/orion-full\/www\/scss\/_header\.scss}line{font-family:\00003131}}
 .top-bar .top-bar__search {
   position: relative;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac-mini-2\/Desktop\/src\/orion-full\/www\/scss\/_header\.scss}line{font-family:\00003124}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac-mini-2\/Desktop\/src\/orion-full\/www\/scss\/_header\.scss}line{font-family:\00003133}}
 .top-bar .top-bar__search input[type="text"] {
   width: 180px;
   height: 33px;
@@ -1775,7 +1787,7 @@ body:after {
   font-size: 13px;
   font-weight: 200;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac-mini-2\/Desktop\/src\/orion-full\/www\/scss\/_header\.scss}line{font-family:\00003149}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac-mini-2\/Desktop\/src\/orion-full\/www\/scss\/_header\.scss}line{font-family:\00003158}}
 .top-bar .top-bar__search input[type="text"] + label {
   opacity: 1;
   position: absolute;
@@ -1790,7 +1802,7 @@ body:after {
   -webkit-transition-timing-function: ease-in;
   transition-timing-function: ease-in;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac-mini-2\/Desktop\/src\/orion-full\/www\/scss\/_header\.scss}line{font-family:\00003160}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac-mini-2\/Desktop\/src\/orion-full\/www\/scss\/_header\.scss}line{font-family:\00003169}}
 .top-bar .top-bar__search input[type="text"]:focus {
   width: 220px;
   padding: 0 15px;
@@ -1800,7 +1812,7 @@ body:after {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#085b90), to(#1169a0));
   background-image: linear-gradient(#085b90, #1169a0);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac-mini-2\/Desktop\/src\/orion-full\/www\/scss\/_header\.scss}line{font-family:\00003161}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac-mini-2\/Desktop\/src\/orion-full\/www\/scss\/_header\.scss}line{font-family:\00003170}}
 .top-bar .top-bar__search input[type="text"]:focus + label {
   opacity: 0;
   left: 0px;
@@ -2058,7 +2070,6 @@ body:after {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac-mini-2\/Desktop\/src\/orion-full\/www\/scss\/_specslider\.scss}line{font-family:\0000379}}
 .specslider .specslider__wrapper .specslider__item img {
-  border-radius: 1000px;
   margin-bottom: 30px;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac-mini-2\/Desktop\/src\/orion-full\/www\/scss\/_specslider\.scss}line{font-family:\0000384}}
