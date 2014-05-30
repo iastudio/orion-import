@@ -95,9 +95,9 @@
 				height: 78px;
 				&.active a, a:hover {
 					@include box-shadow(
-							rgba(204, 246, 175, 0.5) 0 -60px 40px -30px inset,
-							rgba(204, 246, 175, 0.5) 0 40px 40px -30px inset,
-							rgba(171, 207, 152, 0.5) 0 40px 40px -30px,
+							rgba(195, 187, 163, 0.6) 0 -60px 40px -30px inset,
+							rgba(195, 187, 163, 0.6) 0 40px 40px -30px inset,
+							rgba(88, 120, 119, 0.6) 0 40px 40px -30px,
 							rgba(0, 0, 0, 0.3) 0 2px 6px -2px
 						);
 					// @include box-shadow(

@@ -88,9 +88,9 @@
 					// @include linear-gradient(#F18719, #F39119);
 					// @include box-shadow(rgba(black, 0.6) 0 3px 15px 0, rgba(241,133,25, 0.5) 0 -10px 50px 10px);
 					
-					border-top: 2px solid #84c217;
-					@include linear-gradient(#6d9d10, #599413);
-					@include box-shadow(rgba(black, 0.6) 0 3px 15px 0, rgba(#4A9685, 0.5) 0 -10px 50px 10px);
+					border-top: 1px solid #f2b897;
+					@include linear-gradient(#d68905, #b85c02);
+					@include box-shadow(rgba(black, 0.6) 0 3px 15px 0, rgba(#7296ad, 0.5) 0 -10px 50px 10px);
 
 					z-index: 1;
 					cursor: pointer;
